@@ -5,7 +5,7 @@ function CountryPage() {
     const { id } = useParams();
     const [countryData, setCountryData] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:3001/country/${id}`)
+        fetch(`${process.env.REACT_APP_API}/country/${id}`)
             .then(res => res.json())
             .then(data => setCountryData(data))
     }, [id])

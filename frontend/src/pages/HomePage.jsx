@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 function HomePage() {
     const [data,setData]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3001/country')
+        fetch(`${process.env.REACT_APP_API}/country`)
         .then(res=>res.json())
         .then(data=>setData(data))
     },[])
